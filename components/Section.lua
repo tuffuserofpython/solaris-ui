@@ -99,7 +99,7 @@ function Section.new(parent: GuiObject, options: table, theme: table)
 		arrow.Size                  = UDim2.fromOffset(20, 20)
 		arrow.Position              = UDim2.new(1, -28, 0.5, -10)
 		arrow.BackgroundTransparency = 1
-		arrow.Text                  = "â–¾"
+		arrow.Text                  = "¾"
 		arrow.TextColor3            = colors.TextMuted
 		arrow.TextSize              = 14
 		arrow.Font                  = fonts.Body
@@ -214,7 +214,7 @@ end
 ---@param opts table
 ---@return table Toggle object
 function Section:AddToggle(opts: table)
-	local Toggle = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Toggle']) or require(script.Parent.Toggle)
+	local Toggle = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Toggle']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Toggle']) or require(script.Parent.Toggle)
 	local toggle = Toggle.new(self._content, opts, self._theme)
 	table.insert(self._elements, toggle)
 	return toggle
@@ -224,7 +224,7 @@ end
 ---@param opts table
 ---@return table Slider object
 function Section:AddSlider(opts: table)
-	local Slider = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Slider']) or require(script.Parent.Slider)
+	local Slider = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Slider']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Slider']) or require(script.Parent.Slider)
 	local slider = Slider.new(self._content, opts, self._theme)
 	table.insert(self._elements, slider)
 	return slider
@@ -234,7 +234,7 @@ end
 ---@param opts table
 ---@return table Button object
 function Section:AddButton(opts: table)
-	local Button = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Button']) or require(script.Parent.Button)
+	local Button = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Button']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Button']) or require(script.Parent.Button)
 	local button = Button.new(self._content, opts, self._theme)
 	table.insert(self._elements, button)
 	return button
@@ -244,7 +244,7 @@ end
 ---@param opts table
 ---@return table Dropdown object
 function Section:AddDropdown(opts: table)
-	local Dropdown = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Dropdown']) or require(script.Parent.Dropdown)
+	local Dropdown = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Dropdown']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Dropdown']) or require(script.Parent.Dropdown)
 	local dropdown = Dropdown.new(self._content, opts, self._theme)
 	table.insert(self._elements, dropdown)
 	return dropdown
@@ -254,7 +254,7 @@ end
 ---@param opts table
 ---@return table TextBox object
 function Section:AddTextBox(opts: table)
-	local TextBox = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/TextBox']) or require(script.Parent.TextBox)
+	local TextBox = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/TextBox']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/TextBox']) or require(script.Parent.TextBox)
 	local textbox = TextBox.new(self._content, opts, self._theme)
 	table.insert(self._elements, textbox)
 	return textbox
@@ -264,7 +264,7 @@ end
 ---@param opts table
 ---@return table ColorPicker object
 function Section:AddColorPicker(opts: table)
-	local ColorPicker = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/ColorPicker']) or require(script.Parent.ColorPicker)
+	local ColorPicker = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/ColorPicker']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/ColorPicker']) or require(script.Parent.ColorPicker)
 	local picker = ColorPicker.new(self._content, opts, self._theme)
 	table.insert(self._elements, picker)
 	return picker
@@ -274,7 +274,7 @@ end
 ---@param opts table
 ---@return table Keybind object
 function Section:AddKeybind(opts: table)
-	local Keybind = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Keybind']) or require(script.Parent.Keybind)
+	local Keybind = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Keybind']) or (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Keybind']) or require(script.Parent.Keybind)
 	local keybind = Keybind.new(self._content, opts, self._theme)
 	table.insert(self._elements, keybind)
 	return keybind
