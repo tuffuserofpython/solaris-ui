@@ -76,9 +76,9 @@ Default.Transparency = {
 Default.Fonts = {
 	Heading  = Enum.Font.GothamBold,
 	Body     = Enum.Font.Gotham,
-	Caption  = Enum.Font.GothamLight,
+	Caption  = Enum.Font.Gotham,
 	Mono     = Enum.Font.RobotoMono,
-	SemiBold = Enum.Font.GothamSemibold,
+	SemiBold = Enum.Font.GothamBold,
 }
 
 -- ============================================================
