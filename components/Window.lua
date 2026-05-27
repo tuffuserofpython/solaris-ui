@@ -58,8 +58,8 @@ function Window.new(screenGui: ScreenGui, options: table, theme: table)
 	self._onCloseCallbacks = {}
 	self._activeTab      = nil
 
-	local winW = options.Size and options.Size.X or winCfg.DefaultWidth
-	local winH = options.Size and options.Size.Y or winCfg.DefaultHeight
+	local winW = options.Size and options.Size.X.Offset or winCfg.DefaultWidth
+	local winH = options.Size and options.Size.Y.Offset or winCfg.DefaultHeight
 
 	-- Shadow container (behind window)
 	local shadowHolder = Instance.new("Frame")
@@ -370,7 +370,7 @@ end
 ---@param opts table { Label, Icon }
 ---@return table Tab object
 function Window:AddTab(opts: table)
-	local Tab = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Tab']) or require(script.Parent.Tab)
+	local Tab = require(script.Parent.Tab)
 	local tab = Tab.new(self._tabBar, self._contentArea, opts, self._theme)
 	table.insert(self._tabs, tab)
 
