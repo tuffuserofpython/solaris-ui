@@ -370,7 +370,7 @@ end
 ---@param opts table { Label, Icon }
 ---@return table Tab object
 function Window:AddTab(opts: table)
-	local Tab = require(script.Parent.Tab)
+	local Tab = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Tab']) or require(script.Parent.Tab)
 	local tab = Tab.new(self._tabBar, self._contentArea, opts, self._theme)
 	table.insert(self._tabs, tab)
 

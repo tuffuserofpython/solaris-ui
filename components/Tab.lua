@@ -263,7 +263,7 @@ end
 ---@param opts table { Title, Description, Collapsible }
 ---@return table Section object
 function Tab:AddSection(opts: table)
-	local Section = require(script.Parent.Section)
+	local Section = (rawget(_G,'_SolarisReg') and _G._SolarisReg['components/Section']) or require(script.Parent.Section)
 	local section = Section.new(self._contentFrame, opts, self._theme)
 	table.insert(self._sections, section)
 	return section

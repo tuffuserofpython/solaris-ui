@@ -2,7 +2,7 @@
 -- Button component with ripple effect for LibUI
 
 local TweenService = game:GetService("TweenService")
-local Ripple       = require(script.Parent.Parent.animations.Ripple)
+local Ripple = (rawget(_G,"_SolarisReg") and _G._SolarisReg["animations/Ripple"]) or require(script.Parent.Parent.animations.Ripple)
 
 local Button = {}
 Button.__index = Button
